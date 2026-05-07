@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['loggedin'] = true;
             $_SESSION['user_matric'] = $user['matric'];
             header("Location: read.php"); 
-            exit();
         } else {
             $error_message = "Invalid username or password, please <a href='login.php'>login</a> again.";
         }
@@ -52,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
     <p>
-        Don't have an account? <a href="register.php">Register here.</a>
+         Don't have an account? <a href="register.php">Register here.</a>
     </p>
 
 </body>

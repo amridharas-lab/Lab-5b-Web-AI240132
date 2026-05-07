@@ -1,12 +1,15 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin'])) { header('Location: login.php'); exit; }
+if (!isset($_SESSION['loggedin'])) { 
+    header('Location: login.php'); 
+    exit; 
+}
 include 'db.php';
 
 $sql = "SELECT matric, name, role FROM users";
 $result = $conn->query($sql);
 ?>
-
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +28,8 @@ $result = $conn->query($sql);
             <th>Matric</th>
             <th>Name</th>
             <th>Level</th>
-            <th colspan="2">Action</th> </tr>
+            <th colspan="2">Action</th> 
+        </tr>
         <?php while($row = $result->fetch_assoc()): ?>
         <tr>
             <td><?php echo $row['matric']; ?></td>
